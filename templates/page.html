@@ -1,0 +1,32 @@
+<!-- templates/page.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Sidebar on static pages -->
+<div class="flex">
+    <nav class="w-64 bg-custard border-r border-gray-300 p-6 sticky top-0 h-screen overflow-y-auto">
+        <h2 class="text-xl font-bold mb-6"><a href="/" class="hover:text-gray-700">Pages</a></h2>
+        <ul class="space-y-2">
+            {% for p in pages %}
+            <li>
+                <a href="/{{ p }}" class="text-gray-800 hover:font-semibold transition">
+                    {{ p }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
+    <main class="flex-1 p-8">
+        <article>
+            <h1 class="text-4xl font-bold mb-2">{{ title }}</h1>
+            <p class="text-gray-600 text-sm mb-6"> {# {{ page.date.strftime('%B %d, %Y') }} ]#}</p>
+            <div class="max-w-none text-gray-800 space-y-4">
+                {{ content | safe }}
+            </div>
+        </article>
+
+    </main>
+</div>
+
+{% endblock content %}
+
