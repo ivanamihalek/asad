@@ -1,6 +1,8 @@
 /* static/css/style.css */
 :root {
     --custard: #F3E5AB;
+    --white:   #FFFFFF;
+    --pretty-blue:  #005582;
 }
 
 * {
@@ -8,12 +10,21 @@
 }
 
 body {
-    background-color: var(--custard);
+    /*background-color: var(--custard);*/
+    background-color: var(--white);
+
 }
+
+.bg-white {
+    background-color: var(--white);
+}
+
 
 .bg-custard {
     background-color: var(--custard);
 }
+
+
 
 .border-gray-300 {
     border-color: #d1d5db;
@@ -154,17 +165,24 @@ body {
 .max-w-none {
     max-width: none;
 }
-
 a {
-    text-decoration: none;
-    color: inherit;
     transition: all 0.2s;
 }
 
 a:hover {
     text-decoration: underline;
+
 }
 
 article {
     color: #1f2937;
 }
+
+article a {
+    color: var(--pretty-blue);
+}
+
+article a:hover {
+    text-decoration: underline;
+}
+

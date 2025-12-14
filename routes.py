@@ -1,6 +1,6 @@
 import glob
 import os
-from flask import render_template, abort
+from flask import render_template, abort, render_template_string
 from markupsafe import Markup
 from app import app
 
@@ -13,7 +13,7 @@ def get_pages_catalog():
     and returns a list of dictionaries sorted by the numeric prefix.
 
     Returns:
-        list: [{'slug': 'page1', 'filename': '0001_page1.html'}, ...]
+        list: [{'slug': 'page1', 'filename': '0001_tmem81.html'}, ...]
     """
     if not os.path.exists(PAGES_DIR):
         return []
@@ -72,7 +72,15 @@ def dynamic_page(slug):
     # We pass 'pages' (the list of strings) and the content
     return render_template(
         'page.html',
-        content=Markup(content),
+        content=Markup(render_template_string(content)),
         title=slug,
         pages=pages_list
     )
+
+
+# Markup() tells Flask/Jinja that the string is safe HTML and shouldn't be escaped.
+# Without it, any HTML tags in your content would be converted to escaped text (e.g., < becomes &lt;).
+# This prevents HTML injection attacks. If you rendered user input directly without escaping, a
+# malicious user could inject <script>alert('hacked')</script> and it would execute in the browser.
+# In your case, your HTML files are static files you control (not user-generated),
+# so there's no security risk. You can safely drop Markup()

@@ -2,31 +2,56 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!-- Sidebar on static pages -->
 <div class="flex">
-    <nav class="w-64 bg-custard border-r border-gray-300 p-6 sticky top-0 h-screen overflow-y-auto">
-        <h2 class="text-xl font-bold mb-6"><a href="/" class="hover:text-gray-700">Pages</a></h2>
+    <!-- Mobile menu button -->
+     <button id="menu-toggle" class="md:hidden fixed top-4 left-4 z-50 p-2 rounded bg-white">
+        <svg class="w-6 h-6"  stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+    </button>
+
+    <!-- Backdrop -->
+    <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-0 z-30 hidden md:hidden"></div>
+
+
+    <!-- Sidebar -->
+    <nav id="sidebar" class="w-64 bg-white border-r border-gray-300 p-6 h-screen overflow-y-auto
+                         fixed md:sticky top-0 -translate-x-full md:translate-x-0 transition-transform z-40 bg-opacity-100">
+        <h2 class="text-xl font-bold mb-6"><a href="/" class="hover:text-gray-700">Structures</a></h2>
         <ul class="space-y-2">
             {% for p in pages %}
             <li>
-                <a href="/{{ p }}" class="text-gray-800 hover:font-semibold transition">
-                    {{ p }}
-                </a>
+                <a href="/{{ p }}" class="text-gray-800 hover:font-semibold transition">{{ p }}</a>
             </li>
             {% endfor %}
         </ul>
     </nav>
-    <main class="flex-1 p-8">
+
+    <main class="flex-1 p-4 pt-16 md:p-8 md:pt-8 md:ml-0">
         <article>
             <h1 class="text-4xl font-bold mb-2">{{ title }}</h1>
-            <p class="text-gray-600 text-sm mb-6"> {# {{ page.date.strftime('%B %d, %Y') }} ]#}</p>
             <div class="max-w-none text-gray-800 space-y-4">
                 {{ content | safe }}
             </div>
         </article>
-
     </main>
 </div>
 
+<script>
+    const toggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const backdrop = document.getElementById('backdrop');
+
+    toggle.addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+        backdrop.classList.toggle('hidden');
+    });
+
+    backdrop.addEventListener('click', () => {
+        sidebar.classList.add('-translate-x-full');
+        backdrop.classList.add('hidden');
+    });
+
+</script>
 {% endblock content %}
 
