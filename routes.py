@@ -13,7 +13,7 @@ def get_pages_catalog():
     and returns a list of dictionaries sorted by the numeric prefix.
 
     Returns:
-        list: [{'slug': 'page1', 'filename': '0001_tmem81.html'}, ...]
+        list: [{'slug': 'page1', 'filename': '0001_TMEM81.html'}, ...]
     """
     if not os.path.exists(PAGES_DIR):
         return []
