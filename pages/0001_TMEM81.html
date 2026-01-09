@@ -1,5 +1,6 @@
 <div class="mb-8">
-    <img src="{{ url_for('static', filename='img/0001/tmem81-by-af.jpg') }}" alt="Banner" class="w-full h-96 object-cover rounded">
+    <img src="{{ url_for('static', filename='img/0001/tmem81-by-af.jpg') }}"
+         alt="Banner" class="w-full h-96 object-cover rounded">
     <p class="text-xs text-gray-500 mt-2">Credit: Google DeepMind/EMBL-EBI (CC-BY-4.0)</p>
 </div>
 
@@ -12,20 +13,38 @@
     <a href="https://www.cell.com/cell/fulltext/S0092-8674(24)01093-6"  target="_blank"> brought to shore </a>
     thanks to
     <a href="https://www.biorxiv.org/content/10.1101/2021.10.04.463034v2" target="_blank">AlphaFold-Multimer</a>
-    (I could not locate a reviewed version).
+    (I could not locate a reviewed version of the related publication).
 
 </p>
 
-<div class="flex gap-6 my-8">
+<div class="flex gap-6 bg-[url('/img/0001/W5XKT8-F1_supp_7ta2.png')] h-64 w-full bg-cover bg-center">
     <div class="w-1/4">
-        <img src="{{ url_for('static', filename='img/0001/7ta2.png') }}" alt="Side image" class="w-full rounded">
+        <img src="{{ url_for('static', filename='img/0001/7ta2.png') }}"
+             alt="Side image of 7ta2 structure" class="w-full rounded ">
     </div>
     <div class="w-3/4">
         <p>
-            The structure of SPACA6 was published in 2021. It is shown on the left.
+            In their work,  Pauli's lab established that Tmem81 forms trimers with Izumo1 and Spaca6.
         </p>
 
-        <h3 class="text-2xl font-semibold mt-6 mb-2">Subtitle</h3>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <h3 class="text-2xl font-semibold mt-6 mb-2">SPACA6</h3>
+        <p>
+            The structure of SPACA6 was published in 2021, PDB id
+            <a href="https://www.rcsb.org/structure/7TA2" target="_blank">7TA2</a>. It is shown on the left. According to the
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9482655/#Sec12:~:text=At%20the%20time%20of%20structure%20determination%2C%20there%20were%20no%20experimental%20or%20AlphaFold%20structures%20available%2E"
+               target="_blank">
+                 accompanying paper,
+            </a>
+            at the time of structure determination, there were no experimental or
+            AlphaFold structures available. Below is the superposition of  7TA2 structure (cyan), with some ions (red), and the
+            AF 2 structure prediction (cyan), as of Aug 2025.
+
+
+        </p>
     </div>
 </div>
+
+<span class="inline-black w-full -mt-1280">
+    <img src="{{ url_for('static', filename='img/0001/W5XKT8-F1_supp_7ta2.png') }}"
+         alt="Page width image 7ta2 structure superimposed ofn AF2 prediction" class="w-full">
+</span>
