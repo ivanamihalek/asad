@@ -17,10 +17,11 @@
 
 </p>
 
-<div class="flex gap-6 bg-[url('/img/0001/W5XKT8-F1_supp_7ta2.png')] h-64 w-full bg-cover bg-center">
+<!--------------------------------------------------------------------------------------------->
+<div class="flex gap-6 ">
     <div class="w-1/4">
         <img src="{{ url_for('static', filename='img/0001/7ta2.png') }}"
-             alt="Side image of 7ta2 structure" class="w-full rounded ">
+             alt="Side image of 7ta2 structure" class="max-w-full">
     </div>
     <div class="w-3/4">
         <p>
@@ -30,21 +31,63 @@
         <h3 class="text-2xl font-semibold mt-6 mb-2">SPACA6</h3>
         <p>
             The structure of SPACA6 was published in 2021, PDB id
-            <a href="https://www.rcsb.org/structure/7TA2" target="_blank">7TA2</a>. It is shown on the left. According to the
+            <a href="https://www.rcsb.org/structure/7TA2" target="_blank">7TA2</a>.
+            It is shown on the left. According to the
             <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9482655/#Sec12:~:text=At%20the%20time%20of%20structure%20determination%2C%20there%20were%20no%20experimental%20or%20AlphaFold%20structures%20available%2E"
-               target="_blank">
-                 accompanying paper,
+               target="_blank"> accompanying paper,
             </a>
             at the time of structure determination, there were no experimental or
-            AlphaFold structures available. Below is the superposition of  7TA2 structure (cyan), with some ions (red), and the
-            AF 2 structure prediction (cyan), as of Aug 2025.
-
+            AlphaFold structures available. Shown in the figure below is the superposition of 7TA2 structure (cyan), with some ions (red), and the
+            AF2 structure prediction (magenta, the structure with the corkscrew thing), as of Aug 2025.
 
         </p>
+
+        <span class="inline-block max-w-full -mt-1280">
+            <img src="{{ url_for('static', filename='img/0001/W5XKT8-F1_supp_7ta2.png') }}"
+                 alt="Page width image 7ta2 structure superimposed ofn AF2 prediction" class="max-w-full">
+        </span>
+
     </div>
 </div>
 
-<span class="inline-black w-full -mt-1280">
-    <img src="{{ url_for('static', filename='img/0001/W5XKT8-F1_supp_7ta2.png') }}"
-         alt="Page width image 7ta2 structure superimposed ofn AF2 prediction" class="w-full">
-</span>
+
+<!--------------------------------------------------------------------------------------------->
+<div class="flex gap-6 ">
+    <div class="w-3/4">
+        <h3 class="text-2xl font-semibold mt-6 mb-2">IZUMO1</h3>
+        <p>
+            Two groups published, back to back in Nature 534, 2016, the structure of IZUMO1,
+            <a href="https://www.rcsb.org/structure/5JK9" target="_blank">5JK9</a>, by Ohto et al., and
+            <a href="https://www.rcsb.org/structure/5F4T" target="_blank">5F4T</a>, by Aydin et al.
+
+            The superposition of these two structures is shown on the right.
+            Below is the superposition of the AF2 prediction (magenta) on the two crystallized structures (green, cyan)
+        </p>
+
+        <span class="inline-block max-w-full -mt-1280">
+            <img src="{{ url_for('static', filename='img/0001/Q8IYV9-F1_supp_izumo1.png') }}"
+                 alt="Page width image 5JK9 and 5F4T structures superimposed on AF2 prediction" class="max-w-full">
+        </span>
+    </div>
+
+    <div class="w-1/4">
+        <img src="{{ url_for('static', filename='img/0001/izumo1_overlap.png') }}"
+             alt="The close overlap of the two Izumo1 structures ( 5JK9 and 5F4T) published in 2016" class="max-w-full">
+    </div>
+
+</div>
+
+
+
+<!--------------------------------------------------------------------------------------------->
+<div class="flex gap-6 ">
+    <div class="w-3/4">
+        <h3 class="text-2xl font-semibold mt-6 mb-2">TMEM81</h3>
+        <p>
+           Back to the main protagonist - TMEM81. Given AF2's success rate in modeling its cousins, we do not
+            have much reson to expect that it can model anything outside the
+        </p>
+
+    </div>
+
+</div>
