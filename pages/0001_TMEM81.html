@@ -80,13 +80,97 @@
 
 
 <!--------------------------------------------------------------------------------------------->
-<div class="flex gap-6 ">
-    <div class="w-3/4">
+<div class="flex gap-6">
+    <div class="w-full ">
         <h3 class="text-2xl font-semibold mt-6 mb-2">TMEM81</h3>
         <p>
-           Back to the main protagonist - TMEM81. Given AF2's success rate in modeling its cousins, we do not
-            have much reson to expect that it can model anything outside the
+            Back to the main protagonist — TMEM81. In distinction to modeling its cousins IZUMO1 and SPACA6, here AF2 is
+            on its own. So it predicts some helices, a small beta strand and an immunoglobulin-like domain.
+            Their relative 3D arrangement is left to our imagination.
         </p>
+        <br>
+        <p>
+            But how does AF do as much as that - getting the immunoglobulin-like domain right?
+            After all, marvels a publication contemporary to the one form the Prof. Pauli's group,
+            the sequence identity to the (Ig)-like domains in  IZUMO1 and SPACA6
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11052572/#:~:text=16%E2%80%9327" target="_blank">is 16–27% </a>.
+        </p>
+        <br>
+        <p>
+            As it turns out, there are better ways to look for structural similarity, and if AF is worth its salt, it has
+            figured it out.  You can look for a sequence of <em>secondary structure elements</em> corresponding to TMEM81,
+            together with some judicious grouping of amino acids by their physical characteristics and alignment of the
+            structurally important cysteines. There is one server that comes to my mind right away
+            (there may be more) that does just that: <a href="https://aideepmed.com/I-TASSER/" target="_blank">I-TASSER</a>.
+            The illustration below shows the idea. For more you will have to run I-TASSER yourself, they do not
+            store the results for very long:
+        </p>
+        <br>
+        <div class="inline-block max-w-full  min-w-[800px] -mt-1280">
+            <img src="{{ url_for('static', filename='img/0001/i-tasser-pred.png') }}"
+                 alt="Illustration of I-Tasser finding and reporting the similarity in the (predicted) secondary structure"
+                 class="max-w-full space-x-4">
+        </div>
+        <p>
+            Among else, note the honestly reported crystal structures that the model is based on.
+            Here is also a zoom into  the IG-region:
+        </p>
+        <div class="inline-block max-w-full  min-w-[500px] -mt-1280">
+            <img src="{{ url_for('static', filename='img/0001/i-tasser-ig-domain.png') }}"
+                 alt="Illustration of I-Tasser finding and reporting the similarity in the (predicted) secondary structure"
+                 class="max-w-full space-x-4"/>
+        </div>
+
+        <br/>
+        <p>
+            There is even some sequence similarity here that can be forced out of
+            <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi" target="_blank">BLAST</a>
+            search by adapting the parameters to
+            short sequence search (I tried).
+
+
+        </p>
+        <p>
+            The similarity is high enough for PyMol to align the TMEM81 ig-like
+            domain to its counterpart in IZUMO1 (try as homework).
+            N.B: Pymol's default algorithm
+            <a href="https://pymolwiki.org/Align" target="_blank">aligns by sequence,</a>
+            not by structural similarity.
+            Here is a somewhat  messy rendition of the PyMol superposition of the IG-like domains in the SPACA6 / IZUMO1 /TMEM81
+            trio. The highlighted pieces of the sequence are enough to guide the alignment.
+        </p>
+        <div class="inline-block max-w-full  min-w-[600px] -mt-1280">
+            <img src="{{ url_for('static', filename='img/0001/pymol_ig_superposition.png') }}"
+                 alt="Illustration of PyMol structurla alignment of the IG-like domains in the SPACA6 / IZUMO1 /TMEM81"
+                 class="max-w-full space-x-4">
+        </div>
+
+
+
+        <!--- there is som e intersting substory here - Izumo1 was noted to be similar to plasmodium invasion proteins
+        (https://pubmed.ncbi.nlm.nih.gov/27374339/) and poliovirus receptor (CD155)  - the latter actually being
+        a human protein that the poli viurs exploits - CD155 (cluster of differentiation 155), a
+        lso known as the poliovirus receptor, is a protein that in humans is encoded by the PVR gene.[3][4]
+        It is a transmembrane protein that is involved in forming junctions between neighboring cells.
+         It is also the molecule that poliovirus uses to enter cells. The gene is specific to the primates.
+         That's the 1dgiR structure reported by I-TASSER
+        -->
+        <p>
+            Bottom line: up to this point AF2 did not "predict" or "fold" anything new that could not have been done
+            with more pedestrian methods. An odd choice to celebrate its fifth birthday.
+        </p>
+        <br/>
+        <p>
+            Coda: To be fair to prof Pauli, his enthusiasm came from the trimerization structure prediction by AlphaFold-Multimer,
+            not from AF3 itself. To be noted, however, his lab's work did not prove that the predicted structure is correct,
+            but that the three proteins very
+            likely form a trimer. So how did AF get that? AF-Multimer is trained on known protein complexes.
+            Ig-like domains are popular among adhesion proteins. Let's return to this question in another post.
+        </p>
+        <!--- check ed the the elif structure of the complex is the same. so at list the thing is consistent.
+        Th e-life group marvers hoe the "template free" prediction looks the same as pn of the complexes it was trained on
+        --->
+
 
     </div>
 
